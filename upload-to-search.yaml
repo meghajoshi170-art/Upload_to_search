@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  uploadtosearch:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.handler
+      Runtime: python3.13
+      CodeUri: s3://lambdaoutputbucket-556174328764/Upload_to_search/Upload_to_search.zip
+      Description: ''
+      MemorySize: 512
+      Timeout: 900
+      Role: 'arn:aws:iam::556174328764:role/CodePipelineLambdaExecRole'
